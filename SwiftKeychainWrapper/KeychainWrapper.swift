@@ -35,7 +35,6 @@ private let SecValueData: String! = kSecValueData as String
 private let SecAttrAccessible: String! = kSecAttrAccessible as String
 private let SecClass: String! = kSecClass as String
 private let SecAttrService: String! = kSecAttrService as String
-private let SecAttrGeneric: String! = kSecAttrGeneric as String
 private let SecAttrAccount: String! = kSecAttrAccount as String
 private let SecAttrAccessGroup: String! = kSecAttrAccessGroup as String
 private let SecReturnAttributes: String = kSecReturnAttributes as String
@@ -404,8 +403,6 @@ public class KeychainWrapper {
         
         // Uniquely identify the account who will be accessing the keychain
         let encodedIdentifier: NSData? = keyName.dataUsingEncoding(NSUTF8StringEncoding)
-        
-        keychainQueryDictionary[SecAttrGeneric] = encodedIdentifier
         
         keychainQueryDictionary[SecAttrAccount] = encodedIdentifier
         
